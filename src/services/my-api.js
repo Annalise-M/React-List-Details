@@ -6,7 +6,10 @@ const url = `https://cors-anywhere.herokuapp.com/strainapi.evanbusse.com/${proce
 export const getDevilsLettuce = async() => {
   // eslint-disable-next-line max-len
   const res = await fetch(url);
-  // const json = await res.json();
-  console.log(await res.json(), 'thissssssssssssssssssssssss');
+  const someObject = await res.json();
 
+  const map = new Map(Object.entries(someObject));
+
+  console.log(map, 'testttttttttttttttttt');
+  return map;
 };

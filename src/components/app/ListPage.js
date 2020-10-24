@@ -6,17 +6,22 @@ export default class ListPage extends Component {
       strains: []
     }
 
-    async componentDidMount() {
+    componentDidMount = async() => {
       const strains = await getDevilsLettuce();
-      // eslint-disable-next-line max-len
-      console.log(strains, 'wheeerrrreeetheeeeefuckkkkkkkkkkissssthissssssssssssss');
+      
+      this.setState({
+        names: strains
+      });
+
+      console.log(strains, 'wheeerrrreeetheeeeefuckkkkkkkkkkissssthisssssss');
     }
 
     render() {
       const { strains } = this.state;
+
       return (
         <>
-          <h1>List of Strains</h1>
+          <h1>All Strains</h1>
           {
             strains
             && <div>
